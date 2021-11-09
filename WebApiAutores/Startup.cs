@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WebApiAutores.Filtros;
@@ -27,13 +28,20 @@ public class Startup
         // se configura el servicio para conexión y manipulación de la base de datos
         services.AddDbContext<ApplicationDbContext>(options 
             => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
-  
+
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new() { Title = "WebApiAutores", Version = "v1" });
         });
         // Se agrega el servicio de automapper para el mapeo entre clases
-        services.AddAutoMapper(typeof(Startup));        
+        services.AddAutoMapper(typeof(Startup));
+
+        // Se configura el servicio de AddIdentity
+        services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
     }
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
     {
