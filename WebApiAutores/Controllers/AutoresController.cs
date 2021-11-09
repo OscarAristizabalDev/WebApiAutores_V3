@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,8 @@ public class AutoresController: ControllerBase
     }
 
     // devuelve un listado de autores
+
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] // Permite proteger la ruta
     [HttpGet] // api/autores
     public async Task<List<AutorDTO>> Get()
     {
