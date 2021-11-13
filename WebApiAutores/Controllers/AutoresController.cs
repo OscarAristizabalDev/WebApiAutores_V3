@@ -73,8 +73,9 @@ public class AutoresController: ControllerBase
         return mapper.Map<List<AutorDTO>>(autores);
     }
 
-    [HttpPost]
+
     // [FromBody] indica que el valor viene desde el cuerpo de la petición http
+    [HttpPost]
     public async Task<ActionResult> Post([FromBody] AutorCreacionDTO autorCreacionDTO)
     {
         var existeAutor = await context.Autores.AnyAsync(x => x.Nombre == autorCreacionDTO.Nombre);

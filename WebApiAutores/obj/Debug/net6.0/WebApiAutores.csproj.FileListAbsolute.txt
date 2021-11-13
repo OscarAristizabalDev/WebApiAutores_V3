@@ -80,3 +80,4 @@ C:\Users\OSCAR\source\repos\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiA
 C:\Users\OSCAR\source\repos\WebApiAutores\WebApiAutores\obj\Debug\net6.0\ref\WebApiAutores.dll
 C:\Users\OSCAR\source\repos\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.pdb
 C:\Users\OSCAR\source\repos\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.genruntimeconfig.cache
+C:\Users\OSCAR\source\repos\WebApiAutores\WebApiAutores\obj\Debug\net6.0\WebApiAutores.csproj.AssemblyReference.cache

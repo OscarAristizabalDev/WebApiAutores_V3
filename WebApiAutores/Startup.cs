@@ -55,6 +55,7 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiAutores v1"));
         }
+        app.UseDeveloperExceptionPage();
 
         app.UseHttpsRedirection();
 
